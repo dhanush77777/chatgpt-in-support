@@ -10,7 +10,7 @@ from intents import intents
 from responses import responses
 
 load_dotenv()
-openai.api_key = os.getenv("OPENAI_API_KEY")
+openai.api_key = "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"
 
 with open('phrases.json', 'r') as f:
     phrases = json.load(f)
@@ -65,9 +65,9 @@ def tracking_order():
     awb="SRTP8501354758"
     #awb=input("please enter the awb number")
     tracking_url= "https://apiv2.shiprocket.in/v1/tracking/{}".format(awb)
-    token=os.getenv("bearer_token")
-    headers = {'Authorization': f'Bearer {token}'}
-    response = requests.get(tracking_url, headers=headers)
+    #token=os.getenv("bearer_token")
+    #headers = {'Authorization': f'Bearer {token}'}
+    response = requests.get(tracking_url)
     try:
         if response.status_code == 200:
             data = response.json()
