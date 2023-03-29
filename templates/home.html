@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Chatbot Interface</title>
+    <style>
+      body {
+        zoom: 150%;
+      }
+    </style>
+  </head>
+  <body>
+    <center>
+      <form action="{{url_for('pred')}}" method="post">
+        <label for="text">Enter your text:</label>
+        <input type="text" id="text" name="text"><br><br>
+        <button type="submit">Submit</button>
+      </form>
+      <br>
+      <br>
+      <p style="font-size: 1.5em;">{{txt}}</p>
+    </center>
+  </body>
+</html>
